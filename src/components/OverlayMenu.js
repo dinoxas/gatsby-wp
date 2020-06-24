@@ -32,24 +32,25 @@ const OverlayMenu = ({ menuOpen, callback }) => {
     <Overlay menuOpen={menuOpen}>
       <div className="inner">
         <img alt="white logo" className="whiteLogo" src={WhiteLogo} />
-      </div>
-      <ul className="overlayMenu">
-        {menu.items.map((item, index) => (
-          <li key={index}>
-            <Link to={item.url} activeClassName="overlayActive">
-              {item.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-      <div
-        className="closeButton"
-        onClick={callback}
-        role="button"
-        tabIndex="0"
-        onKeyDown={callback}
-      >
-        <img alt="close button" src={CloseButton} />
+
+        <ul className="overlayMenu">
+          {menu.items.map((item, index) => (
+            <li key={index}>
+              <Link to={item.url} activeClassName="overlayActive">
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div
+          className="closeButton"
+          onClick={callback}
+          role="button"
+          tabIndex="0"
+          onKeyDown={callback}
+        >
+          <img alt="close button" src={CloseButton} />
+        </div>
       </div>
     </Overlay>
   )

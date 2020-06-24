@@ -10,9 +10,6 @@ import "./layout.css"
 import "bootstrap/dist/css/bootstrap-grid.min.css"
 
 const Primary = styled.main`
-  background: red;
-
-  max-width: 1000px;
   margin: 2rem auto;
 `
 
