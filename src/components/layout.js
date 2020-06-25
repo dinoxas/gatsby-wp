@@ -7,10 +7,10 @@ import OverlayMenu from "./OverlayMenu"
 import Hamburger from "./Hamburger"
 
 import "./layout.css"
-import "bootstrap/dist/css/bootstrap-grid.min.css"
+import "bootstrap/dist/css/bootstrap-grid.css"
 
 const Primary = styled.main`
-  margin: 2rem auto;
+  padding: 110px 0 0;
 `
 
 const Layout = ({ children }) => {

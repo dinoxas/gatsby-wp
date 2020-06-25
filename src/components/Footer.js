@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import iconFB from "../images/tango-facebook-icon.svg"
 import iconIG from "../images/tango-instagram-icon.svg"
 import iconLI from "../images/tango-linkedin-icon.svg"
@@ -25,7 +23,7 @@ const Footer = () => {
             <p className="tango-contact">+44 (0) 208 877 5566</p>
             <span className="social">
               <a
-                href="_blank"
+                target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com"
               >
@@ -42,7 +40,7 @@ const Footer = () => {
             <p className="tango-contact">+44 (0) 208 877 5987</p>
             <span className="social">
               <a
-                href="_blank"
+                target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com"
               >
@@ -57,7 +55,7 @@ const Footer = () => {
 
             <span className="social">
               <a
-                href="_blank"
+                target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.facebook.com"
               >
@@ -65,7 +63,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="_blank"
+                target="_blank"
                 rel="noopener noreferrer"
                 href="https://www.instagram.com"
               >
