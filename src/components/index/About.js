@@ -1,10 +1,42 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
+import { AboutWrapper } from "./styles/AboutStyles"
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      wordpressPage(wordpress_id: { eq: 47 }) {
+        content
+        featured_media {
+          localFile {
+            childImageSharp {
+              fluid(quality: 100, maxWidth: 2000) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
   return (
-    <div>
-      <h2>About</h2>
-    </div>
+    <AboutWrapper>
+      <div className="container-fluid">
+        <div className="row">
+          <div
+            className="col-md-6 aboutImg"
+            style={{
+              backgroundImage: `url(${data.wordpressPage.featured_media.localFile.childImageSharp.fluid.src})`,
+            }}
+          ></div>
+          <div className="col-md-6 aboutText">
+            <div
+              dangerouslySetInnerHTML={{ __html: data.wordpressPage.content }}
+            />
+          </div>
+        </div>
+      </div>
+    </AboutWrapper>
   )
 }
 
