@@ -1,6 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
-import Layout from "../components/Layout"
+import Layout from "../components/layout"
 import About from "../components/index/About"
 import CTAImages from "../components/index/CTAImages"
 import HeroSlider from "../components/index/HeroSlider"
