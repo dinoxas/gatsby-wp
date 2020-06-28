@@ -12,7 +12,7 @@ const PageContent = styled.article`
 
 // pageContext prop grabs context data created via createPage action in gatsby--node
 // data prop is created via data received from page query
-const PageTemplate = ({ data }) => (
+const pageTemplate = ({ data }) => (
   <Layout>
     {data.currentPage.featured_media ? (
       <PageHero
@@ -38,7 +38,7 @@ const PageTemplate = ({ data }) => (
   </Layout>
 )
 
-export default PageTemplate
+export default pageTemplate
 
 // used page query instead of static query as it needs to access variables
 export const pageQuery = graphql`
