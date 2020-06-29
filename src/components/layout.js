@@ -1,18 +1,18 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+
 import Header from "./Header"
-import Footer from "./Footer"
 import OverlayMenu from "./OverlayMenu"
 import Hamburger from "./Hamburger"
+import Footer from "./Footer"
 
 import "./layout.css"
 import "bootstrap/dist/css/bootstrap-grid.css"
 
 const Primary = styled.main`
-  padding: 110px 0 0;
+  padding: 110px 0 0 0;
 `
-
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -27,7 +27,6 @@ const Layout = ({ children }) => {
       <Header />
       <Primary id="primary" className="content-area">
         <main id="main" className="site-main" role="main">
-          {/** render child compoent */}
           {children}
         </main>
       </Primary>
