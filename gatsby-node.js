@@ -2,14 +2,13 @@ const path = require("path")
 const slash = require("slash")
 const { paginate } = require("gatsby-awesome-pagination")
 
-// gatsby createPages API
 exports.createPages = async ({ graphql, actions }) => {
   // extract built-in createPage action from collection of actions
   const { createPage } = actions
-
+  // comment
   const pageTemplate = path.resolve("./src/templates/page.js")
-  const postTemplate = path.resolve("./src/templates/post.js")
   const archiveTemplate = path.resolve("./src/templates/archive.js")
+  const postTemplate = path.resolve("./src/templates/post.js")
 
   const result = await graphql(`
     {
@@ -24,7 +23,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
       allWordpressPost {
         edges {
           node {
@@ -37,7 +35,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
       allWordpressCategory {
         edges {
           node {
@@ -51,7 +48,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
 
-  // check for errors
+  // Check for errors
   if (result.errors) {
     throw new Error(result.errors)
   }
@@ -62,7 +59,32 @@ exports.createPages = async ({ graphql, actions }) => {
     allWordpressCategory,
   } = result.data
 
-  // For Page
+  // Create archive pages for each category
+  allWordpressCategory.edges.forEach(catEdge => {
+    // First filter out the posts that belongs to the current category
+    const filteredPosts = allWordpressPost.edges.filter(
+      ({ node: { categories } }) =>
+        categories.some(el => el.id === catEdge.node.id)
+    )
+    // Some categories may be empty and we don't want to show them
+    if (filteredPosts.length > 0) {
+      paginate({
+        createPage,
+        items: filteredPosts,
+        itemsPerPage: 10,
+        pathPrefix: `/trends/${catEdge.node.slug}`,
+        component: slash(archiveTemplate),
+        context: {
+          catId: catEdge.node.id,
+          catName: catEdge.node.name,
+          catSlug: catEdge.node.slug,
+          catCount: catEdge.node.count,
+          categories: allWordpressCategory.edges,
+        },
+      })
+    }
+  })
+
   allWordpressPage.edges.forEach(edge => {
     if (edge.node.status === "publish") {
       createPage({
@@ -77,7 +99,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
-  // For Post
   allWordpressPost.edges.forEach(edge => {
     if (edge.node.status === "publish") {
       createPage({
@@ -85,34 +106,6 @@ exports.createPages = async ({ graphql, actions }) => {
         component: slash(postTemplate),
         context: {
           id: edge.node.id,
-        },
-      })
-    }
-  })
-
-  // For Archive
-  // create archive pages for each category
-  allWordpressCategory.edges.forEach(catEdge => {
-    // first filter out the posts that belongs to the current category
-    const filteredPosts = allWordpressPost.edges.filter(
-      ({ node: { categories } }) =>
-        categories.some(el => el.id === catEdge.node.id)
-    )
-
-    // dont show empty categories
-    if (filteredPosts.length > 0) {
-      paginate({
-        createPage,
-        items: filteredPosts,
-        itemsPerPage: 10,
-        pathPrefix: `/trends/${catEdge.node.slug}`,
-        component: slash(archiveTemplate),
-        context: {
-          catId: catEdge.node.id,
-          catName: catEdge.node.name,
-          catSlug: catEdge.node.slug,
-          catCount: catEdge.node.count,
-          categories: allWordpressCategory.edges,
         },
       })
     }
