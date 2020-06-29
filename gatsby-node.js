@@ -62,6 +62,7 @@ exports.createPages = async ({ graphql, actions }) => {
     allWordpressCategory,
   } = result.data
 
+  // For Page
   allWordpressPage.edges.forEach(edge => {
     if (edge.node.status === "publish") {
       createPage({
@@ -76,6 +77,20 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   })
 
+  // For Post
+  allWordpressPost.edges.forEach(edge => {
+    if (edge.node.status === "publish") {
+      createPage({
+        path: `/trends${edge.node.link}`,
+        component: slash(postTemplate),
+        context: {
+          id: edge.node.id,
+        },
+      })
+    }
+  })
+
+  // For Archive
   // create archive pages for each category
   allWordpressCategory.edges.forEach(catEdge => {
     // first filter out the posts that belongs to the current category
