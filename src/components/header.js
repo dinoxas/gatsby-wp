@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
+
 import Navigation from "./Navigation"
 
+import tangoLogo from "../images/tango_logo.svg"
 import { HeaderWrapper } from "./styles/HeaderStyles"
-import brandLogo from "../images/tango_logo.svg"
 
 const Header = () => {
   const {
@@ -45,7 +46,7 @@ const Header = () => {
         <div className="row">
           <div className="col-md-4">
             <Link to="/">
-              <img src={brandLogo} alt={site.siteMetadata.title} />
+              <img src={tangoLogo} alt={site.siteMetadata.title} />
             </Link>
           </div>
           <div className="col-md-8 menu">
