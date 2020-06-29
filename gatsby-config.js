@@ -28,35 +28,36 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: "gatsby-source-wordpress",
       options: {
         excludedRoutes: [
-          `/wp/v2/users/**`,
-          `/wp/v2/settings*`,
-          `/wp/v2/themes*`,
+          "/wp/v2/users/**",
+          "/wp/v2/settings*",
+          "/wp/v2/themes*",
         ],
-        baseUrl: `localhost:8080`,
-        protocol: `http`,
+        baseUrl: "tango.weibenfalk.com",
+        protocol: "http",
         hostingWPCOM: false,
         useACF: true,
         searchAndReplaceContentUrls: {
-          sourceUrl: `http://localhost:8080`,
-          replacementUrl: ``,
+          sourceUrl: "http://tango.weibenfalk.com",
+          replacementUrl: "",
         },
       },
     },
-    `gatsby-plugin-styled-components`,
+    "gatsby-plugin-styled-components",
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: "gatsby-plugin-prefetch-google-fonts",
       options: {
         fonts: [
           {
-            family: `Teko`,
-            variants: [`200`, `400`, `500`, `600`, `700`],
+            family: "Teko",
+            variants: ["200", "400", "500", "600", "700"],
           },
         ],
       },
     },
+
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

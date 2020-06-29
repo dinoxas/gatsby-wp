@@ -13,8 +13,6 @@ const ArchiveSidebar = ({ catId, categories }) => {
     return 0
   })
 
-  console.log(categories)
-  console.log(sortedCategories)
   return (
     <SidebarWrapper className="col-lg-3">
       <SidebarMenu>
