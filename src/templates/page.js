@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -39,6 +40,10 @@ const pageTemplate = ({ data }) => (
 )
 
 export default pageTemplate
+
+pageTemplate.propTypes = {
+  data: PropTypes.object,
+}
 
 // used page query instead of static query as it needs to access variables
 export const pageQuery = graphql`
