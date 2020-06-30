@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const FooterWrapper = styled.footer`
   background: #212121;
@@ -7,11 +7,11 @@ export const FooterWrapper = styled.footer`
   padding: 40px 0;
 
   h1 {
-    font-family: 'Teko', Arial;
+    font-family: "Teko", Arial;
   }
 
   h3 {
-    font-family: 'Teko', Arial;
+    font-family: "Teko", Arial;
     font-size: 24px;
     margin-bottom: 0px;
     font-weight: 200;
@@ -22,7 +22,7 @@ export const FooterWrapper = styled.footer`
   a {
     text-decoration: none;
     color: #fff;
-    font-weight: 800;
+    font-weight: 600;
     font-family: Arial, Helvetica, sans-serif;
   }
 
@@ -44,6 +44,7 @@ export const FooterWrapper = styled.footer`
   }
 
   .tango-contact {
+    font-size: 1rem;
     margin-top: 0px;
     margin-bottom: 0px;
     font-family: Arial, Helvetica, sans-serif;
@@ -61,4 +62,4 @@ export const FooterWrapper = styled.footer`
   .facebook {
     margin-left: 5px;
   }
-`;
+`

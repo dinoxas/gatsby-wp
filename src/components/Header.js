@@ -3,7 +3,8 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Navigation from "./Navigation"
 
-import tangoLogo from "../images/tango_logo.svg"
+// import tangoLogo from "../images/tango_logo.svg"
+import WhiteLogo from "../images/tango_logo_white.svg"
 import { HeaderWrapper } from "./styles/HeaderStyles"
 
 const Header = () => {
@@ -46,7 +47,7 @@ const Header = () => {
         <div className="row">
           <div className="col-md-4">
             <Link to="/">
-              <img src={tangoLogo} alt={site.siteMetadata.title} />
+              <img src={WhiteLogo} alt={site.siteMetadata.title} />
             </Link>
           </div>
           <div className="col-md-8 menu">

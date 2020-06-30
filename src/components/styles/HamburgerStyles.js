@@ -1,12 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const HamburgerButton = styled.div`
   img {
     position: fixed;
     display: block;
     z-index: 1000;
-    right: 30px;
-    top: 35px;
+    right: 16px;
+    top: 16px;
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -20,4 +20,4 @@ export const HamburgerButton = styled.div`
       display: none;
     }
   }
-`;
+`

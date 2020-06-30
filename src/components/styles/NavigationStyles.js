@@ -1,19 +1,20 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const NavigationWrapper = styled.nav`
   margin: 5px 0 10px 0; /* just to give some spacing */
-  color: #212121;
+  color: #fff;
   text-transform: uppercase;
   position: absolute;
   right: 0px;
-  font-family: 'Teko', Arial, Helvetica, sans-serif;
+  font-family: "Teko", Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: 0.03rem;
   display: none;
+  margin-top: 24px;
 
   .nav-active {
-    color: #d22e26;
+    color: #fb8400;
   }
 
   @media (min-width: 992px) {
@@ -35,10 +36,15 @@ export const NavigationWrapper = styled.nav`
     a {
       padding: 0 0 0 10px;
       transition: all 0.2s ease;
+      display: inline-block;
+      position: relative;
     }
 
     span {
-      margin: 0 0 0 5px;
+      margin: 0 0 0 4px;
+      transform: rotate(90deg);
+      display: inline-block;
+      position: relative;
     }
   }
 
@@ -50,8 +56,11 @@ export const NavigationWrapper = styled.nav`
     display: block; /* show sub menus when hovering over a parent */
   }
 
+  ul li a {
+    color: #fff;
+  }
   ul li a:hover {
-    color: #d22e26;
+    color: #fb8400;
   }
 
   ul ul {
@@ -80,6 +89,11 @@ export const NavigationWrapper = styled.nav`
     padding: 5px 10px; /* give our sub menu links a nice button feel */
     text-decoration: none;
     white-space: nowrap;
+    color: #212121;
+  }
+
+  ul ul li a:hover {
+    color: #fb8400;
   }
 
   @keyframes fadeInMenu {
@@ -90,4 +104,4 @@ export const NavigationWrapper = styled.nav`
       opacity: 1;
     }
   }
-`;
+`

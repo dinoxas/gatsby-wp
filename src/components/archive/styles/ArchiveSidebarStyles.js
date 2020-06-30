@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const SidebarWrapper = styled.aside`
   margin: 40px 0 0 0;
@@ -6,7 +6,7 @@ export const SidebarWrapper = styled.aside`
   @media (min-width: 992px) {
     margin: 125px 0 0 0;
   }
-`;
+`
 
 export const SidebarMenu = styled.ul`
   list-style-type: none;
@@ -17,20 +17,20 @@ export const SidebarMenu = styled.ul`
     margin: 0 10px 0 0;
     padding: 0;
     font-size: 0.8rem;
-    background: #aaa;
+    background: #777;
     color: #fff;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     border-radius: 20px;
     width: 30px;
-    height: 21px;
+    height: 22px;
     display: block;
     text-align: center;
     float: left;
   }
 
   .sidebar-menu-header {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: "Teko", Arial, Helvetica, sans-serif;
     border-bottom: 2px #e4e4e4 solid;
     font-weight: 600;
     letter-spacing: 1px;
@@ -42,18 +42,18 @@ export const SidebarMenu = styled.ul`
   li {
     margin: 0 0 5px 0px;
     color: #000;
-    font-family: 'Teko', Arial;
+    font-family: "Teko", Arial;
     font-size: 20px;
     font-weight: 400;
     letter-spacing: 1px;
 
     a:hover {
-      color: #d22e26;
+      color: #fb8400;
     }
   }
 
   .sidebar-highlighted {
-    color: #d22e26;
+    color: #fb8400;
   }
 
   p {
@@ -72,4 +72,4 @@ export const SidebarMenu = styled.ul`
     width: 38px;
     height: auto;
   }
-`;
+`

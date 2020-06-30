@@ -14,7 +14,7 @@ const Navigation = ({ menu }) => {
             </Link>
             {item.wordpress_children ? (
               <>
-                <span className="">&#8964;</span>
+                <span>&gt;</span>
                 <ul>
                   {item.wordpress_children.map((child, cIndex) => (
                     <li key={cIndex}>

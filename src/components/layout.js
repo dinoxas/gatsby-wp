@@ -11,7 +11,7 @@ import "./layout.css"
 import "bootstrap/dist/css/bootstrap-grid.css"
 
 const Primary = styled.main`
-  padding: 110px 0 0 0;
+  padding: 70px 0 0;
 `
 const Layout = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)

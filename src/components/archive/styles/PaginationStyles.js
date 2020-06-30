@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const PaginationWrapper = styled.nav`
   display: flex;
@@ -14,20 +14,20 @@ export const PaginationWrapper = styled.nav`
     color: #fff;
     font-size: 1rem;
     font-weight: 800;
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: "Teko", Arial, Helvetica, sans-serif;
     padding: 3px 0 0 0;
   }
 
   .navBack {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: "Teko", Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #fff;
     position: relative;
     width: 120px;
     height: 30px;
     display: block;
-    background: #aaa;
+    background: #777;
     padding: 3px 10px 0 25px;
     margin-bottom: 30px;
 
@@ -38,32 +38,32 @@ export const PaginationWrapper = styled.nav`
       top: 50%;
       margin: 0;
       border: solid;
-      content: '';
+      content: "";
       pointer-events: none;
-      border-right-color: #aaa;
+      border-right-color: #777;
       border-width: 15px;
       margin-top: -15px;
     }
 
     :hover {
-      background: #d22e26;
+      background: #8a4baf;
     }
 
     :hover:before {
-      border-right-color: #d22e26;
+      border-right-color: #8a4baf;
     }
   }
 
   .navForward {
-    font-family: 'Teko', Arial, Helvetica, sans-serif;
+    font-family: "Teko", Arial, Helvetica, sans-serif;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 600;
     color: #fff;
     position: relative;
     width: 120px;
     height: 30px;
     display: block;
-    background: #aaa;
+    background: #777;
     padding: 3px 10px 0 5px;
     margin-bottom: 30px;
     text-align: center;
@@ -75,19 +75,19 @@ export const PaginationWrapper = styled.nav`
       top: 50%;
       margin: 0;
       border: solid;
-      content: '';
+      content: "";
       pointer-events: none;
-      border-left-color: #aaa;
+      border-left-color: #777;
       border-width: 15px;
       margin-top: -15px;
     }
 
     :hover {
-      background: #d22e26;
+      background: #8a4baf;
     }
 
     :hover:after {
-      border-left-color: #d22e26;
+      border-left-color: #8a4baf;
     }
   }
-`;
+`

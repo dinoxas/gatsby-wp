@@ -10,9 +10,8 @@ const BreadCrumb = ({ parent }) => {
       <div className="row">
         <div className="col-lg-9 offset-lg-3">
           <BreadCrumbWrapper>
-            <Link to="/">
-              <span>Tango Brand Alliance</span>
-            </Link>
+            <span>Brand Alliance</span>
+
             <span className="divider">/</span>
             {parent ? (
               <>

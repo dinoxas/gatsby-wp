@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components"
 
 export const HeaderWrapper = styled.header`
-  background: #fff;
+  background: #452475;
   margin-bottom: 1.45rem;
-  height: 110px;
-  border-bottom: 1px solid #e7e7e7;
+  height: 70px;
+  border-bottom: 1px solid #362066;
   display: flex;
   align-items: center;
   position: fixed;
@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
   width: 100%;
 
   img {
-    max-width: 200px;
+    max-width: 150px;
     margin: 0;
     padding: 12px 0 0 0;
   }
@@ -21,4 +21,4 @@ export const HeaderWrapper = styled.header`
     display: flex;
     align-items: center;
   }
-`;
+`
